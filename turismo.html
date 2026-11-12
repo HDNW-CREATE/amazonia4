@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turismo | Amazônia</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="marca" href="index.html">
+      <span class="folha">❧</span>
+      <span>
+        <strong>AMAZÔNIA</strong>
+        <small>Natureza • Cultura • Vida</small>
+      </span>
+    </a>
+    <input type="checkbox" id="menu-toggle">
+    <label class="menu-botao" for="menu-toggle" aria-label="Abrir menu">☰</label>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a class="ativo" href="turismo.html">Turismo</a>
+      <a href="curiosidades.html">Curiosidades</a>
+      <a href="localizacao.html">Localização</a>
+      <a href="galeria.html">Galeria de Imagens</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="pagina-hero turismo-hero">
+      <div>
+        <p class="sobretitulo">VIVA A EXPERIÊNCIA</p>
+        <h1>Turismo na Amazônia</h1>
+        <p>Descubra paisagens, sabores e experiências que aproximam você da natureza.</p>
+      </div>
+    </section>
+
+    <section class="secao" id="destinos">
+      <h2 class="titulo-centro">Destinos para conhecer</h2>
+      <div class="cartoes cartoes-destinos">
+        <article class="cartao">
+          <a class="cartao-foto" href="#galeria-manaus" aria-label="Ver 5 fotos de Manaus">
+            <img src="imagens/paisagens/teatro-amazonas.jpg" alt="Teatro Amazonas, em Manaus">
+          </a>
+          <div>
+            <h3><a href="#galeria-manaus">Manaus</a></h3>
+            <p>Conheça a capital do Amazonas, sua arquitetura, seus mercados e sua vida cultural.</p>
+          </div>
+        </article>
+        <article class="cartao">
+          <a class="cartao-foto" href="#galeria-encontro" aria-label="Ver 5 fotos do Encontro das Águas">
+            <img src="imagens/paisagens/encontro-das-aguas-aereo.jpg" alt="Vista aérea do Encontro das Águas, perto de Manaus">
+          </a>
+          <div>
+            <h3><a href="#galeria-encontro">Encontro das Águas</a></h3>
+            <p>Uma paisagem fluvial famosa pela confluência dos rios Negro e Solimões.</p>
+          </div>
+        </article>
+        <article class="cartao">
+          <a class="cartao-foto" href="#galeria-alter" aria-label="Ver 5 fotos de Alter do Chão">
+            <img src="imagens/paisagens/alter-do-chao.jpg" alt="Ilha do Amor, em Alter do Chão">
+          </a>
+          <div>
+            <h3><a href="#galeria-alter">Alter do Chão</a></h3>
+            <p>Destino conhecido pelas praias de água doce e pelas paisagens do rio Tapajós.</p>
+          </div>
+        </article>
+        <article class="cartao">
+          <a class="cartao-foto" href="#galeria-anavilhanas" aria-label="Ver 5 fotos do Parque Nacional de Anavilhanas">
+            <img src="imagens/paisagens/anavilhanas.jpg" alt="Ilhas do arquipélago de Anavilhanas no Rio Negro">
+          </a>
+          <div>
+            <h3><a href="#galeria-anavilhanas">Parque Nacional de Anavilhanas</a></h3>
+            <p>Uma região de ilhas fluviais e floresta, ideal para conhecer com operadores autorizados.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== GALERIA: MANAUS ===== -->
+      <div class="galeria-modal" id="galeria-manaus" role="dialog" aria-modal="true" aria-labelledby="titulo-galeria-manaus">
+        <a class="galeria-fundo" href="#destinos" aria-label="Fechar galeria"></a>
+        <div class="galeria-caixa">
+          <div class="galeria-topo">
+            <h3 id="titulo-galeria-manaus">Manaus</h3>
+            <a class="galeria-fechar" href="#destinos" aria-label="Fechar galeria">×</a>
+          </div>
+
+          <input class="galeria-radio" type="radio" name="galeria-manaus" id="manaus-1" checked aria-label="Foto 1">
+          <input class="galeria-radio" type="radio" name="galeria-manaus" id="manaus-2" aria-label="Foto 2">
+          <input class="galeria-radio" type="radio" name="galeria-manaus" id="manaus-3" aria-label="Foto 3">
+          <input class="galeria-radio" type="radio" name="galeria-manaus" id="manaus-4" aria-label="Foto 4">
+          <input class="galeria-radio" type="radio" name="galeria-manaus" id="manaus-5" aria-label="Foto 5">
+
+          <div class="galeria-slides">
+            <figure class="galeria-slide">
+              <img src="https://images.pexels.com/photos/17291233/pexels-photo-17291233.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Vista aérea do Teatro Amazonas ao amanhecer, com a cúpula colorida e o centro de Manaus ao fundo" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="manaus-5" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="manaus-2" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">1 / 5</span> <a href="https://www.pexels.com/photo/amazon-theatre-in-manaus-17291233/" target="_blank" rel="noopener">Foto: K / Pexels</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://images.pexels.com/photos/17291235/pexels-photo-17291235.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Fachada rosa do Teatro Amazonas vista do alto, com o rio Negro no horizonte" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="manaus-1" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="manaus-3" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">2 / 5</span> <a href="https://www.pexels.com/photo/old-historic-building-with-dome-on-city-square-17291235/" target="_blank" rel="noopener">Foto: K / Pexels</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://images.pexels.com/photos/17291237/pexels-photo-17291237.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Vista aérea do centro de Manaus, com o Teatro Amazonas entre prédios e casas" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="manaus-2" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="manaus-4" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">3 / 5</span> <a href="https://www.pexels.com/photo/cityscape-of-manaus-in-brazil-17291237/" target="_blank" rel="noopener">Foto: K / Pexels</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://images.pexels.com/photos/17291238/pexels-photo-17291238.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Centro histórico de Manaus à beira do rio Negro, com a Ponte Rio Negro ao fundo" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="manaus-3" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="manaus-5" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">4 / 5</span> <a href="https://www.pexels.com/photo/bridge-over-river-in-manaus-17291238/" target="_blank" rel="noopener">Foto: K / Pexels</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://images.pexels.com/photos/17291269/pexels-photo-17291269.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Panorama aéreo de Manaus com o bairro São Raimundo, um igarapé e o rio Negro à direita" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="manaus-4" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="manaus-1" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">5 / 5</span> <a href="https://www.pexels.com/photo/river-estuary-in-city-on-sea-coast-17291269/" target="_blank" rel="noopener">Foto: K / Pexels</a></figcaption>
+            </figure>
+          </div>
+
+          <div class="galeria-miniaturas">
+            <label for="manaus-1"><img src="https://images.pexels.com/photos/17291233/pexels-photo-17291233.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Miniatura: Teatro Amazonas ao amanhecer" loading="lazy"></label>
+            <label for="manaus-2"><img src="https://images.pexels.com/photos/17291235/pexels-photo-17291235.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Miniatura: fachada do Teatro Amazonas" loading="lazy"></label>
+            <label for="manaus-3"><img src="https://images.pexels.com/photos/17291237/pexels-photo-17291237.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Miniatura: centro de Manaus visto do alto" loading="lazy"></label>
+            <label for="manaus-4"><img src="https://images.pexels.com/photos/17291238/pexels-photo-17291238.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Miniatura: Manaus e a Ponte Rio Negro" loading="lazy"></label>
+            <label for="manaus-5"><img src="https://images.pexels.com/photos/17291269/pexels-photo-17291269.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Miniatura: panorama aéreo de Manaus" loading="lazy"></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GALERIA: ENCONTRO DAS ÁGUAS ===== -->
+      <div class="galeria-modal" id="galeria-encontro" role="dialog" aria-modal="true" aria-labelledby="titulo-galeria-encontro">
+        <a class="galeria-fundo" href="#destinos" aria-label="Fechar galeria"></a>
+        <div class="galeria-caixa">
+          <div class="galeria-topo">
+            <h3 id="titulo-galeria-encontro">Encontro das Águas</h3>
+            <a class="galeria-fechar" href="#destinos" aria-label="Fechar galeria">×</a>
+          </div>
+
+          <input class="galeria-radio" type="radio" name="galeria-encontro" id="encontro-1" checked aria-label="Foto 1">
+          <input class="galeria-radio" type="radio" name="galeria-encontro" id="encontro-2" aria-label="Foto 2">
+          <input class="galeria-radio" type="radio" name="galeria-encontro" id="encontro-3" aria-label="Foto 3">
+          <input class="galeria-radio" type="radio" name="galeria-encontro" id="encontro-4" aria-label="Foto 4">
+          <input class="galeria-radio" type="radio" name="galeria-encontro" id="encontro-5" aria-label="Foto 5">
+
+          <div class="galeria-slides">
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Encontro_das_%C3%81guas_-_Manaus.jpg/1280px-Encontro_das_%C3%81guas_-_Manaus.jpg" alt="Vista aérea do Encontro das Águas: o rio Negro, escuro, e o Solimões, barrento, correm lado a lado sem se misturar" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="encontro-5" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="encontro-2" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">1 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Encontro_das_%C3%81guas_-_Manaus.jpg" target="_blank" rel="noopener">Foto: Portal da Copa / Wikimedia Commons (CC BY 3.0 BR)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Meeting_of_waters_from_the_air_manaus_brazil.JPG/1280px-Meeting_of_waters_from_the_air_manaus_brazil.JPG" alt="Encontro das Águas visto do avião, com as águas escura e barrenta lado a lado e a floresta nas margens" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="encontro-1" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="encontro-3" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">2 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Meeting_of_waters_from_the_air_manaus_brazil.JPG" target="_blank" rel="noopener">Foto: Immelman284 / Wikimedia Commons (CC BY-SA 3.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Brazil-00288_-_Meeting_of_Waters_%2848962057606%29.jpg/1280px-Brazil-00288_-_Meeting_of_Waters_%2848962057606%29.jpg" alt="Linha nítida na superfície do rio separando a água escura do rio Negro da água clara do Solimões" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="encontro-2" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="encontro-4" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">3 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Brazil-00288_-_Meeting_of_Waters_(48962057606).jpg" target="_blank" rel="noopener">Foto: Dennis G. Jarvis / Wikimedia Commons (CC BY-SA 2.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Meeting_of_Waters_%28Manaus%29.jpg/1280px-Meeting_of_Waters_%28Manaus%29.jpg" alt="Barco de passeio com turistas no ponto onde a água escura do rio Negro encontra a água barrenta do Solimões" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="encontro-3" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="encontro-5" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">4 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Meeting_of_Waters_(Manaus).jpg" target="_blank" rel="noopener">Foto: Ana Claudia Jatahy – MTUR / Wikimedia Commons (CC0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Cargo_ferry_transporting_cars_passing_by_the_Meeting_of_the_Waters%2C_Manaus%2C_Brazil_1.jpg/1280px-Cargo_ferry_transporting_cars_passing_by_the_Meeting_of_the_Waters%2C_Manaus%2C_Brazil_1.jpg" alt="Balsa de carga atravessando o Encontro das Águas, perto de Manaus" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="encontro-4" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="encontro-1" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">5 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Cargo_ferry_transporting_cars_passing_by_the_Meeting_of_the_Waters,_Manaus,_Brazil_1.jpg" target="_blank" rel="noopener">Foto: Ridiculopathy / Wikimedia Commons (CC0)</a></figcaption>
+            </figure>
+          </div>
+
+          <div class="galeria-miniaturas">
+            <label for="encontro-1"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Encontro_das_%C3%81guas_-_Manaus.jpg/330px-Encontro_das_%C3%81guas_-_Manaus.jpg" alt="Miniatura: vista aérea do Encontro das Águas" loading="lazy"></label>
+            <label for="encontro-2"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Meeting_of_waters_from_the_air_manaus_brazil.JPG/330px-Meeting_of_waters_from_the_air_manaus_brazil.JPG" alt="Miniatura: Encontro das Águas visto do avião" loading="lazy"></label>
+            <label for="encontro-3"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Brazil-00288_-_Meeting_of_Waters_%2848962057606%29.jpg/330px-Brazil-00288_-_Meeting_of_Waters_%2848962057606%29.jpg" alt="Miniatura: linha entre as duas águas" loading="lazy"></label>
+            <label for="encontro-4"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Meeting_of_Waters_%28Manaus%29.jpg/330px-Meeting_of_Waters_%28Manaus%29.jpg" alt="Miniatura: barco de passeio no Encontro das Águas" loading="lazy"></label>
+            <label for="encontro-5"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Cargo_ferry_transporting_cars_passing_by_the_Meeting_of_the_Waters%2C_Manaus%2C_Brazil_1.jpg/330px-Cargo_ferry_transporting_cars_passing_by_the_Meeting_of_the_Waters%2C_Manaus%2C_Brazil_1.jpg" alt="Miniatura: balsa no Encontro das Águas" loading="lazy"></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GALERIA: ALTER DO CHÃO ===== -->
+      <div class="galeria-modal" id="galeria-alter" role="dialog" aria-modal="true" aria-labelledby="titulo-galeria-alter">
+        <a class="galeria-fundo" href="#destinos" aria-label="Fechar galeria"></a>
+        <div class="galeria-caixa">
+          <div class="galeria-topo">
+            <h3 id="titulo-galeria-alter">Alter do Chão</h3>
+            <a class="galeria-fechar" href="#destinos" aria-label="Fechar galeria">×</a>
+          </div>
+
+          <input class="galeria-radio" type="radio" name="galeria-alter" id="alter-1" checked aria-label="Foto 1">
+          <input class="galeria-radio" type="radio" name="galeria-alter" id="alter-2" aria-label="Foto 2">
+          <input class="galeria-radio" type="radio" name="galeria-alter" id="alter-3" aria-label="Foto 3">
+          <input class="galeria-radio" type="radio" name="galeria-alter" id="alter-4" aria-label="Foto 4">
+          <input class="galeria-radio" type="radio" name="galeria-alter" id="alter-5" aria-label="Foto 5">
+
+          <div class="galeria-slides">
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ilha_do_Amor%2C_%C3%81lter_do_Ch%C3%A3o.JPG/1280px-Ilha_do_Amor%2C_%C3%81lter_do_Ch%C3%A3o.JPG" alt="Ilha do Amor, faixa de areia branca no rio Tapajós, com barcos ancorados em frente" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="alter-5" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="alter-2" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">1 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Ilha_do_Amor,_%C3%81lter_do_Ch%C3%A3o.JPG" target="_blank" rel="noopener">Foto: Lais Castro / Wikimedia Commons (CC BY-SA 4.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Alter_do_ch%C3%A3o%2C_Santar%C3%A9m_%2823311400635%29.jpg/1280px-Alter_do_ch%C3%A3o%2C_Santar%C3%A9m_%2823311400635%29.jpg" alt="Banco de areia da Ilha do Amor no rio Tapajós, com a serra da Piraoca ao fundo" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="alter-1" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="alter-3" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">2 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Alter_do_ch%C3%A3o,_Santar%C3%A9m_(23311400635).jpg" target="_blank" rel="noopener">Foto: Espaço São José Liberto / Wikimedia Commons (CC BY 2.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Alter_do_Ch%C3%A3o_487a.jpg/1280px-Alter_do_Ch%C3%A3o_487a.jpg" alt="Praia de água doce em Alter do Chão, com barcos coloridos parados na areia" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="alter-2" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="alter-4" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">3 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Alter_do_Ch%C3%A3o_487a.jpg" target="_blank" rel="noopener">Foto: idobi / Wikimedia Commons (CC BY-SA 3.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Alter_do_Ch%C3%A3o_Brazil_The_Beach.jpg/1280px-Alter_do_Ch%C3%A3o_Brazil_The_Beach.jpg" alt="Mesas e guarda-sóis na praia de areia branca de Alter do Chão, à beira do rio Tapajós" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="alter-3" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="alter-5" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">4 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Alter_do_Ch%C3%A3o_Brazil_The_Beach.jpg" target="_blank" rel="noopener">Foto: Richard N Horne / Wikimedia Commons (CC BY-SA 4.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Alter_do_Ch%C3%A3o_561a.jpg/1280px-Alter_do_Ch%C3%A3o_561a.jpg" alt="Pôr do sol dourado refletido nas águas do rio Tapajós, em Alter do Chão" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="alter-4" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="alter-1" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">5 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Alter_do_Ch%C3%A3o_561a.jpg" target="_blank" rel="noopener">Foto: idobi / Wikimedia Commons (CC BY-SA 3.0)</a></figcaption>
+            </figure>
+          </div>
+
+          <div class="galeria-miniaturas">
+            <label for="alter-1"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ilha_do_Amor%2C_%C3%81lter_do_Ch%C3%A3o.JPG/330px-Ilha_do_Amor%2C_%C3%81lter_do_Ch%C3%A3o.JPG" alt="Miniatura: Ilha do Amor" loading="lazy"></label>
+            <label for="alter-2"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Alter_do_ch%C3%A3o%2C_Santar%C3%A9m_%2823311400635%29.jpg/330px-Alter_do_ch%C3%A3o%2C_Santar%C3%A9m_%2823311400635%29.jpg" alt="Miniatura: Ilha do Amor e serra da Piraoca" loading="lazy"></label>
+            <label for="alter-3"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Alter_do_Ch%C3%A3o_487a.jpg/330px-Alter_do_Ch%C3%A3o_487a.jpg" alt="Miniatura: praia com barcos coloridos" loading="lazy"></label>
+            <label for="alter-4"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Alter_do_Ch%C3%A3o_Brazil_The_Beach.jpg/330px-Alter_do_Ch%C3%A3o_Brazil_The_Beach.jpg" alt="Miniatura: praia com guarda-sóis" loading="lazy"></label>
+            <label for="alter-5"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Alter_do_Ch%C3%A3o_561a.jpg/330px-Alter_do_Ch%C3%A3o_561a.jpg" alt="Miniatura: pôr do sol no Tapajós" loading="lazy"></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GALERIA: PARQUE NACIONAL DE ANAVILHANAS ===== -->
+      <div class="galeria-modal" id="galeria-anavilhanas" role="dialog" aria-modal="true" aria-labelledby="titulo-galeria-anavilhanas">
+        <a class="galeria-fundo" href="#destinos" aria-label="Fechar galeria"></a>
+        <div class="galeria-caixa">
+          <div class="galeria-topo">
+            <h3 id="titulo-galeria-anavilhanas">Parque Nacional de Anavilhanas</h3>
+            <a class="galeria-fechar" href="#destinos" aria-label="Fechar galeria">×</a>
+          </div>
+
+          <input class="galeria-radio" type="radio" name="galeria-anavilhanas" id="anavilhanas-1" checked aria-label="Foto 1">
+          <input class="galeria-radio" type="radio" name="galeria-anavilhanas" id="anavilhanas-2" aria-label="Foto 2">
+          <input class="galeria-radio" type="radio" name="galeria-anavilhanas" id="anavilhanas-3" aria-label="Foto 3">
+          <input class="galeria-radio" type="radio" name="galeria-anavilhanas" id="anavilhanas-4" aria-label="Foto 4">
+          <input class="galeria-radio" type="radio" name="galeria-anavilhanas" id="anavilhanas-5" aria-label="Foto 5">
+
+          <div class="galeria-slides">
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Anavilhanas2.jpg/1280px-Anavilhanas2.jpg" alt="Vista aérea do arquipélago de Anavilhanas: ilhas compridas de floresta separadas por canais do rio Negro" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="anavilhanas-5" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="anavilhanas-2" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">1 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Anavilhanas2.jpg" target="_blank" rel="noopener">Foto: Jason Auch / Wikimedia Commons (CC BY 2.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Parque_Nacional_de_Anavilhanas_-_Igap%C3%B3.jpg/1280px-Parque_Nacional_de_Anavilhanas_-_Igap%C3%B3.jpg" alt="Igapó em Anavilhanas: árvores com o tronco dentro da água, refletidas no rio Negro" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="anavilhanas-1" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="anavilhanas-3" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">2 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Parque_Nacional_de_Anavilhanas_-_Igap%C3%B3.jpg" target="_blank" rel="noopener">Foto: Gabriel Marcusso / Wikimedia Commons (CC BY-SA 4.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Ribeira_do_Rio_Negro%2C_Anavilhanas%2C_Novo_Air%C3%A3o.jpg/1280px-Ribeira_do_Rio_Negro%2C_Anavilhanas%2C_Novo_Air%C3%A3o.jpg" alt="Floresta alagada na margem do rio Negro, em Anavilhanas, com as árvores dentro da água" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="anavilhanas-2" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="anavilhanas-4" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">3 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Ribeira_do_Rio_Negro,_Anavilhanas,_Novo_Air%C3%A3o.jpg" target="_blank" rel="noopener">Foto: Hector Bottai / Wikimedia Commons (CC BY-SA 4.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Igap%C3%B3_-_Anavilhanas.jpg/1280px-Igap%C3%B3_-_Anavilhanas.jpg" alt="Margem de igapó coberta de floresta, refletida nas águas calmas e escuras do rio Negro" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="anavilhanas-3" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="anavilhanas-5" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">4 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Igap%C3%B3_-_Anavilhanas.jpg" target="_blank" rel="noopener">Foto: Andre zumak / Wikimedia Commons (CC BY-SA 4.0)</a></figcaption>
+            </figure>
+            <figure class="galeria-slide">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Parque_Nacional_de_Anavilhanas_GuilhonAmaz%C3%B4nia_%283%29.jpg/1280px-Parque_Nacional_de_Anavilhanas_GuilhonAmaz%C3%B4nia_%283%29.jpg" alt="Ilha coberta de floresta no rio Negro, refletida na água, no Parque Nacional de Anavilhanas" loading="lazy">
+              <label class="galeria-seta galeria-anterior" for="anavilhanas-4" aria-label="Foto anterior">‹</label>
+              <label class="galeria-seta galeria-proxima" for="anavilhanas-1" aria-label="Próxima foto">›</label>
+              <figcaption><span class="galeria-contador">5 / 5</span> <a href="https://commons.wikimedia.org/wiki/File:Parque_Nacional_de_Anavilhanas_GuilhonAmaz%C3%B4nia_(3).jpg" target="_blank" rel="noopener">Foto: GuilhonAmazonia / Wikimedia Commons (CC BY-SA 4.0)</a></figcaption>
+            </figure>
+          </div>
+
+          <div class="galeria-miniaturas">
+            <label for="anavilhanas-1"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Anavilhanas2.jpg/330px-Anavilhanas2.jpg" alt="Miniatura: arquipélago visto de cima" loading="lazy"></label>
+            <label for="anavilhanas-2"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Parque_Nacional_de_Anavilhanas_-_Igap%C3%B3.jpg/330px-Parque_Nacional_de_Anavilhanas_-_Igap%C3%B3.jpg" alt="Miniatura: igapó" loading="lazy"></label>
+            <label for="anavilhanas-3"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Ribeira_do_Rio_Negro%2C_Anavilhanas%2C_Novo_Air%C3%A3o.jpg/330px-Ribeira_do_Rio_Negro%2C_Anavilhanas%2C_Novo_Air%C3%A3o.jpg" alt="Miniatura: floresta alagada" loading="lazy"></label>
+            <label for="anavilhanas-4"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Igap%C3%B3_-_Anavilhanas.jpg/330px-Igap%C3%B3_-_Anavilhanas.jpg" alt="Miniatura: margem refletida no rio Negro" loading="lazy"></label>
+            <label for="anavilhanas-5"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Parque_Nacional_de_Anavilhanas_GuilhonAmaz%C3%B4nia_%283%29.jpg/330px-Parque_Nacional_de_Anavilhanas_GuilhonAmaz%C3%B4nia_%283%29.jpg" alt="Miniatura: ilha no rio Negro" loading="lazy"></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao clara">
+      <h2>Experiências responsáveis</h2>
+      <ul class="dicas">
+        <li>Prefira passeios autorizados e guias locais.</li>
+        <li>Respeite os animais: observe à distância e não os alimente.</li>
+        <li>Leve de volta todo o lixo e evite retirar plantas ou outros elementos naturais.</li>
+        <li>Valorize os conhecimentos e as escolhas das comunidades locais.</li>
+        <li>Antes da viagem, confira condições, regras e orientações em fontes oficiais.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <a class="marca" href="index.html">
+      <span class="folha">❧</span>
+      <span>
+        <strong>AMAZÔNIA</strong>
+        <small>Natureza • Cultura • Vida</small>
+      </span>
+    </a>
+    <p>A natureza nos conecta.</p>
+    <div class="rodape-links">
+      <a href="index.html">Início</a>
+      <a href="curiosidades.html">Curiosidades</a>
+      <a href="localizacao.html">Localização</a>
+      <a href="galeria.html">Galeria</a>
+    </div>
+    <p class="creditos">Imagens: Wikimedia Commons (licenças Creative Commons) e Pexels. Créditos aos respectivos autores.</p>
+  </footer>
+
+</body>
+</html>

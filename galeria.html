@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Imagens | Amazônia</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="marca" href="index.html">
+      <span class="folha">❧</span>
+      <span>
+        <strong>AMAZÔNIA</strong>
+        <small>Natureza • Cultura • Vida</small>
+      </span>
+    </a>
+    <input type="checkbox" id="menu-toggle">
+    <label class="menu-botao" for="menu-toggle" aria-label="Abrir menu">☰</label>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="turismo.html">Turismo</a>
+      <a href="curiosidades.html">Curiosidades</a>
+      <a href="localizacao.html">Localização</a>
+      <a class="ativo" href="galeria.html">Galeria de Imagens</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="pagina-hero galeria-hero">
+      <div>
+        <p class="sobretitulo">GALERIA</p>
+        <h1>Explore em imagens</h1>
+        <p>Uma seleção visual de paisagens e vida natural.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Paisagens, rios e natureza</h2>
+      <p class="introducao">Clique em uma imagem para ampliá-la. As fotografias são carregadas de fontes externas.</p>
+      <!-- PAISAGENS -->
+      <div class="galeria-bloco">
+        <h3>Paisagens</h3>
+        <div class="galeria-grade">
+          <figure>
+            <a href="#foto1">
+              <img src="imagens/paisagens/nuvens-sobre-a-floresta.jpg" alt="Nuvens da tarde sobre a Floresta Amazônica">
+            </a>
+            <figcaption>Nuvens sobre a floresta</figcaption>
+          </figure>
+          <figure>
+            <a href="#foto2">
+              <img src="imagens/paisagens/rio-na-floresta.jpg" alt="Rio no meio da Floresta Amazônica">
+            </a>
+            <figcaption>Rio na floresta</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- FLORA -->
+      <div class="galeria-bloco">
+        <h3>Flora</h3>
+        <div class="galeria-grade">
+          <figure>
+            <a href="#foto3">
+              <img src="imagens/flora/vitorias-regias-manaus.jpg" alt="Vitórias-régias perto de Manaus">
+            </a>
+            <figcaption>Vitórias-régias</figcaption>
+          </figure>
+          <figure>
+            <a href="#foto4">
+              <img src="imagens/flora/floresta-manaus.jpg" alt="Floresta amazônica em Manaus">
+            </a>
+            <figcaption>Floresta amazônica</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- FAUNA -->
+      <div class="galeria-bloco">
+        <h3>Fauna</h3>
+        <div class="galeria-grade">
+          <figure>
+            <a href="#foto5">
+              <img src="imagens/fauna/boto-cor-de-rosa.jpg" alt="Boto-cor-de-rosa comendo um peixe">
+            </a>
+            <figcaption>Boto-cor-de-rosa</figcaption>
+          </figure>
+          <figure>
+            <a href="#foto6">
+              <img src="imagens/fauna/ave-sobre-vitorias-regias.jpg" alt="Ave sobre vitórias-régias perto de Manaus">
+            </a>
+            <figcaption>Ave sobre vitórias-régias</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PAISAGENS -->
+  <div class="lightbox" id="foto1" role="dialog" aria-label="Imagem ampliada">
+    <a class="lightbox-fundo" href="#" aria-label="Fechar imagem"></a>
+    <a class="fechar" href="#" aria-label="Fechar imagem">×</a>
+    <img src="imagens/paisagens/nuvens-sobre-a-floresta.jpg" alt="Nuvens da tarde sobre a Floresta Amazônica">
+  </div>
+
+  <div class="lightbox" id="foto2" role="dialog" aria-label="Imagem ampliada">
+    <a class="lightbox-fundo" href="#" aria-label="Fechar imagem"></a>
+    <a class="fechar" href="#" aria-label="Fechar imagem">×</a>
+    <img src="imagens/paisagens/rio-na-floresta.jpg" alt="Rio no meio da Floresta Amazônica">
+  </div>
+
+  <!-- FLORA -->
+  <div class="lightbox" id="foto3" role="dialog" aria-label="Imagem ampliada">
+    <a class="lightbox-fundo" href="#" aria-label="Fechar imagem"></a>
+    <a class="fechar" href="#" aria-label="Fechar imagem">×</a>
+    <img src="imagens/flora/vitorias-regias-manaus.jpg" alt="Vitórias-régias perto de Manaus">
+  </div>
+
+  <div class="lightbox" id="foto4" role="dialog" aria-label="Imagem ampliada">
+    <a class="lightbox-fundo" href="#" aria-label="Fechar imagem"></a>
+    <a class="fechar" href="#" aria-label="Fechar imagem">×</a>
+    <img src="imagens/flora/floresta-manaus.jpg" alt="Floresta amazônica em Manaus">
+  </div>
+
+  <!-- FAUNA -->
+  <div class="lightbox" id="foto5" role="dialog" aria-label="Imagem ampliada">
+    <a class="lightbox-fundo" href="#" aria-label="Fechar imagem"></a>
+    <a class="fechar" href="#" aria-label="Fechar imagem">×</a>
+    <img src="imagens/fauna/boto-cor-de-rosa.jpg" alt="Boto-cor-de-rosa comendo um peixe">
+  </div>
+
+  <div class="lightbox" id="foto6" role="dialog" aria-label="Imagem ampliada">
+    <a class="lightbox-fundo" href="#" aria-label="Fechar imagem"></a>
+    <a class="fechar" href="#" aria-label="Fechar imagem">×</a>
+    <img src="imagens/fauna/ave-sobre-vitorias-regias.jpg" alt="Ave sobre vitórias-régias perto de Manaus">
+  </div>
+  <footer class="rodape">
+    <a class="marca" href="index.html">
+      <span class="folha">❧</span>
+      <span>
+        <strong>AMAZÔNIA</strong>
+        <small>Natureza • Cultura • Vida</small>
+      </span>
+    </a>
+    <p>A natureza nos conecta.</p>
+    <div class="rodape-links">
+      <a href="index.html">Início</a>
+      <a href="turismo.html">Turismo</a>
+      <a href="curiosidades.html">Curiosidades</a>
+      <a href="localizacao.html">Localização</a>
+    </div>
+    <p class="creditos">Imagens: Wikimedia Commons, licenças Creative Commons. Créditos aos respectivos autores.</p>
+  </footer>
+
+</body>
+</html>

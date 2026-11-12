@@ -1,0 +1,1671 @@
+:root {
+  --verde: #082d20;
+  --verde2: #174a35;
+  --creme: #f5f0df;
+  --dourado: #e8b94f;
+  --texto: #183127;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--creme);
+  line-height: 1.6;
+}
+
+/*
+  CABEÇALHO SOBRE A IMAGEM DO HERO
+  - position: absolute tira o header do fluxo da página: a imagem do hero
+    sobe e fica atrás do menu, começando no topo da tela.
+  - Sem fundo sólido: só um degradê de cima para baixo (verde bem escuro
+    com 85% de opacidade até transparente), que mantém o menu legível.
+  - O padding-bottom extra deixa o degradê "descer" um pouco além do menu.
+*/
+.topo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50; /* acima do hero; as janelas (modais) usam z-index maior */
+  background: linear-gradient(to bottom, rgba(6, 42, 30, .85), rgba(6, 42, 30, 0));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 6% 38px;
+  gap: 24px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.marca strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.marca small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.folha {
+  color: #9ac35b;
+  font-size: 38px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.menu a,
+.rodape-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  color: #e8a33d;
+  border-bottom: 2px solid #e8a33d;
+}
+
+/*
+  MENU DO CELULAR SEM JAVASCRIPT
+  - Existe um checkbox escondido (#menu-toggle) e um label (☰) ligado a ele.
+  - Clicar no label marca/desmarca o checkbox, como se fosse um botão.
+  - Quando o checkbox está marcado (:checked), a regra
+    "#menu-toggle:checked ~ .menu" mostra o menu (veja a media query).
+*/
+#menu-toggle {
+  display: none;
+}
+
+.menu-botao {
+  display: none;
+  background: none;
+  color: white;
+  border: 0;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/*
+  HERO DA PÁGINA INICIAL
+  - Ocupa a altura da tela (100vh). O 100svh logo abaixo evita o "pulo"
+    causado pela barra de endereço do celular nos navegadores que o suportam.
+  - O padding-top grande empurra o texto para baixo do menu.
+  - O primeiro gradiente é o overlay verde-escuro por cima da foto.
+*/
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  background:
+    linear-gradient(90deg, rgba(0,24,15,.8), rgba(0,24,15,.05)),
+    url('../imagens/paisagens/por-do-sol-aereo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 150px 11% 70px;
+}
+
+.hero-texto {
+  max-width: 470px;
+}
+
+.sobretitulo {
+  color: var(--dourado);
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  margin: 0 0 8px;
+}
+
+.hero h1,
+.pagina-hero h1 {
+  font: bold clamp(42px,6vw,72px)/1.05 Georgia, serif;
+  margin: 0 0 8px;
+}
+
+.hero h2 {
+  font: bold 22px Georgia, serif;
+  margin: 0 0 10px;
+}
+
+.hero p:not(.sobretitulo) {
+  max-width: 430px;
+}
+
+.botao {
+  display: inline-block;
+  background: #e68122;
+  color: white;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.botao:hover {
+  background: #c96b16;
+  transform: translateY(-2px);
+}
+
+.secao {
+  padding: 48px 8%;
+}
+
+.apresentacao {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.apresentacao h2,
+.secao h2 {
+  font: bold 34px Georgia, serif;
+  margin: 0 0 12px;
+}
+
+.apresentacao img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 100px 12px 100px 12px;
+}
+
+.link,
+.cartao a {
+  color: var(--verde2);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.clara {
+  background: #eee7d2;
+}
+
+.titulo-centro {
+  text-align: center;
+  margin-bottom: 28px !important;
+}
+
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 20px;
+}
+
+.cartao {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px #15332318;
+  transition: transform .2s;
+}
+
+.cartao:hover {
+  transform: translateY(-4px);
+}
+
+.cartao img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  display: block;
+}
+
+.cartao div {
+  padding: 16px;
+}
+
+.cartao h3 {
+  font: bold 20px Georgia, serif;
+  margin: 0 0 6px;
+}
+
+.cartao p {
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+.destinos {
+  background: var(--verde);
+  color: white;
+}
+
+.destinos > .sobretitulo {
+  text-align: center;
+}
+
+.destinos-grade {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 14px;
+}
+
+.destinos-grade article {
+  border: 1px solid #a8bdad;
+  border-radius: 9px;
+  overflow: hidden;
+  padding-bottom: 12px;
+}
+
+.destinos-grade img {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+}
+
+.destinos-grade h3,
+.destinos-grade p {
+  margin: 8px 12px;
+}
+
+.destinos-grade h3 {
+  font: bold 18px Georgia, serif;
+}
+
+.destinos-grade p {
+  font-size: 13px;
+}
+
+.centro {
+  text-align: center;
+}
+
+.linha-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.linha-titulo h2 {
+  margin: 0;
+}
+
+.mini-galeria {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.mini-galeria img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.rodape {
+  background: var(--verde);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 7%;
+  flex-wrap: wrap;
+}
+
+.rodape p {
+  font-size: 13px;
+}
+
+.rodape-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Crédito das imagens: ocupa uma linha inteira no fim do rodapé */
+.rodape .creditos {
+  width: 100%;
+  margin: 0;
+  font-size: 11px;
+  text-align: center;
+  opacity: .75;
+}
+
+/* HERO DAS PÁGINAS INTERNAS: mesmo padrão, um pouco mais baixo (85% da tela) */
+.pagina-hero {
+  min-height: 85vh;
+  min-height: 85svh;
+  display: flex;
+  align-items: center;
+  padding: 150px 10% 70px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.pagina-hero > div {
+  max-width: 650px;
+}
+
+.pagina-hero p:not(.sobretitulo) {
+  font-size: 18px;
+}
+
+.turismo-hero {
+  background-image: linear-gradient(90deg, #06291ee8, #06291e22), url('../imagens/paisagens/canoa-ao-por-do-sol.jpg');
+}
+
+.curiosidades-hero {
+  background-image: linear-gradient(90deg, #06291ee8, #06291e22), url('../imagens/fauna/onca-pintada-rosto.jpg');
+}
+
+.localizacao-hero {
+  background-image: linear-gradient(90deg, #06291ee8, #06291e22), url('../imagens/paisagens/mapa-amazonas.jpg');
+}
+
+.galeria-hero {
+  background-image: linear-gradient(90deg, #06291ee8, #06291e22), url('../imagens/paisagens/barco-e-rede-por-do-sol.jpg');
+}
+
+.dicas {
+  padding-left: 22px;
+}
+
+.dicas li {
+  margin: 12px 0;
+}
+
+.curiosidades-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 18px;
+}
+
+/*
+  FLIP CARD (CARD QUE VIRA) SEM JAVASCRIPT
+  - .flip-card: a "moldura" do card. O perspective dá profundidade,
+    para o giro parecer 3D.
+  - .flip-card-inner: a "folha" que gira. Ela leva as duas faces juntas.
+    O preserve-3d mantém as faces no espaço 3D e o transition deixa
+    o giro suave.
+  - .flip-card-frente e .flip-card-verso ficam uma em cima da outra.
+    O backface-visibility: hidden esconde a face que está "de costas".
+  - O verso começa já virado (rotateY(180deg)), por isso fica escondido.
+  - No :hover (mouse) ou :focus-within (toque no celular ou tecla Tab),
+    a folha gira 180 graus: a frente fica de costas e o verso aparece.
+*/
+.flip-card {
+  height: 300px;
+  perspective: 1000px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .6s;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Contorno ao navegar com o teclado */
+.flip-card:focus-visible .flip-card-inner {
+  outline: 3px solid var(--dourado);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.flip-card-frente,
+.flip-card-verso {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* FRENTE: foto ocupando o card inteiro */
+.flip-card-frente img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Título sobre uma faixa escura em degradê, na parte de baixo da foto */
+.secao .flip-card-frente h2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 40px 20px 16px;
+  background: linear-gradient(transparent, rgba(0,24,15,.85));
+  color: white;
+  font-size: 23px;
+}
+
+/* VERSO: fundo branco com a borda verde da esquerda */
+.flip-card-verso {
+  transform: rotateY(180deg);
+  background: white;
+  border-left: 4px solid #7b9c4c;
+  padding: 18px 22px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.secao .flip-card-verso h2 {
+  font-size: 21px;
+  margin: 0 0 6px;
+}
+
+.flip-card-verso p {
+  margin: 0 0 8px;
+}
+
+.flip-card-verso ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.flip-card-verso li {
+  margin: 2px 0;
+}
+
+/* Para quem prefere menos animação: sem giro, o verso só aparece por cima */
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner {
+    transition: none;
+  }
+
+  .flip-card:hover .flip-card-inner,
+  .flip-card:focus-within .flip-card-inner {
+    transform: none;
+  }
+
+  .flip-card-verso {
+    transform: none;
+    opacity: 0;
+  }
+
+  .flip-card:hover .flip-card-verso,
+  .flip-card:focus-within .flip-card-verso {
+    opacity: 1;
+  }
+}
+
+.duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+/* Cada categoria (Paisagens, Flora, Fauna) é um bloco com subtítulo */
+.galeria-bloco {
+  margin-top: 28px;
+}
+
+.galeria-bloco h3 {
+  font: bold 24px Georgia, serif;
+  color: var(--verde2);
+  margin: 0 0 12px;
+}
+
+/* 2 fotos lado a lado no computador */
+.galeria-grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.galeria-grade figure {
+  margin: 0;
+}
+
+.galeria-grade a {
+  display: block;
+}
+
+/* Todas as fotos com a mesma proporção (3 x 2), recortadas com cover */
+.galeria-grade img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: cover;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.galeria-grade img:hover {
+  transform: scale(1.02);
+}
+
+.galeria-grade figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--verde2);
+  text-align: center;
+}
+
+.introducao {
+  margin-top: -8px;
+}
+
+/*
+  GALERIA SEM JAVASCRIPT (técnica do :target)
+  - Cada miniatura é um link para um id, por exemplo <a href="#foto1">.
+  - Ao clicar, o endereço da página vira "galeria.html#foto1".
+  - O elemento com id="foto1" passa a ser o "alvo" (:target) e a regra
+    ".lightbox:target" faz ele aparecer por cima da página.
+  - O × e o fundo escuro são links para "#": o alvo deixa de existir
+    e a camada volta a ficar escondida.
+*/
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: #000e;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+  z-index: 5;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+/* Link invisível que cobre todo o fundo: clicar fora da imagem fecha */
+.lightbox-fundo {
+  position: absolute;
+  inset: 0;
+}
+
+.lightbox img {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 8px;
+}
+
+.fechar {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  background: none;
+  color: white;
+  border: 0;
+  font-size: 42px;
+  line-height: 1.6;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media (max-width: 850px) {
+  .topo {
+    flex-wrap: wrap;
+    padding: 14px 5% 28px;
+  }
+
+  .menu-botao {
+    display: block;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 2px;
+  }
+
+  /* Checkbox marcado: o menu aparece, com fundo escuro para ficar legível
+     por cima da foto */
+  #menu-toggle:checked ~ .menu {
+    display: flex;
+    padding: 8px 18px;
+    border-radius: 10px;
+    background: rgba(6, 42, 30, .92);
+  }
+
+  .menu a {
+    font-size: 15px;
+    padding: 11px 0;
+  }
+
+  .hero {
+    padding: 130px 8% 60px;
+  }
+
+  .pagina-hero {
+    padding: 130px 7% 60px;
+  }
+
+  .cartoes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destinos-grade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mini-galeria {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .apresentacao {
+    grid-template-columns: 1fr;
+  }
+
+  .apresentacao img {
+    height: 260px;
+  }
+
+  .duas-colunas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .secao {
+    padding: 34px 5%;
+  }
+
+  .hero {
+    padding: 120px 6% 50px;
+  }
+
+  .hero h2 {
+    font-size: 19px;
+  }
+
+  .pagina-hero p:not(.sobretitulo) {
+    font-size: 16px;
+  }
+
+  .hero h1,
+  .pagina-hero h1 {
+    font-size: clamp(34px, 10.5vw, 44px);
+  }
+
+  .cartoes,
+  .curiosidades-lista,
+  .galeria-grade {
+    grid-template-columns: 1fr;
+  }
+
+  .destinos-grade {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .linha-titulo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .marca strong {
+    font-size: 21px;
+  }
+
+  .pagina-hero {
+    padding: 120px 6% 50px;
+  }
+
+  .rodape {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .rodape-links {
+    justify-content: center;
+  }
+}
+
+/* ===== MAPA DA AMAZÔNIA ===== */
+/* =========================================================
+   MAPA DA AMAZÔNIA
+   Feito só com HTML, SVG e CSS (sem JavaScript).
+   Cole este código no final do seu css/style.css
+   ========================================================= */
+
+/* ---------- Cores do mapa (troque aqui se quiser) ---------- */
+:root {
+  --mapa-rio: #3f86b0;
+  --mapa-texto: #1f3a2a;
+  --mapa-vermelho: #c62828;
+  --mapa-cartao: #ffffff;
+  --mapa-verde-borda: #7d9b4f;
+}
+
+/* ---------- Seção ---------- */
+.mapa-secao {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.mapa-secao h2,
+.mapa-secao h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--mapa-texto);
+}
+
+.mapa-secao h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 10px;
+}
+
+.mapa-secao .introducao {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+
+/* ---------- Caixa branca que envolve o mapa ---------- */
+.mapa-caixa {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--mapa-cartao);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 20px rgba(31, 58, 42, 0.12);
+}
+
+.mapa-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ---------- Estado do Amazonas ----------
+   Cada município é um pedaço do desenho.
+   As linhas brancas finas são as divisas entre os municípios
+   e a linha verde escura é o contorno do estado. */
+.mapa-municipio {
+  fill: #8fb46f;
+  transition: fill 0.2s;
+}
+
+/* Linhas brancas entre os municípios */
+.mapa-municipios {
+  stroke: #ffffff;
+  stroke-width: 0.9;
+  stroke-linejoin: round;
+}
+
+/* Ao passar o mouse, o município fica destacado e mostra o nome */
+.mapa-municipio:hover {
+  fill: #b7d39a;
+}
+
+/* Contorno do estado: uma cópia do desenho, por baixo,
+   com uma linha verde escura bem grossa. Só a borda de fora aparece. */
+.mapa-contorno {
+  stroke: #2f5a3a;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+/* Rios */
+.mapa-rio {
+  pointer-events: none;
+  fill: none;
+  stroke: var(--mapa-rio);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mapa-rio-principal {
+  stroke-width: 4;
+}
+
+.mapa-rotulos-rios text {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  fill: #1f5f85;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 3px;
+}
+
+/* Capital (Manaus) */
+.mapa-capital rect {
+  fill: #c9a227;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+}
+
+.mapa-capital text {
+  font-size: 15px;
+}
+
+/* Cidades */
+.mapa-cidades circle {
+  fill: var(--mapa-texto);
+  stroke: #ffffff;
+  stroke-width: 1.5;
+}
+
+.mapa-cidades text {
+  font-size: 13px;
+  font-weight: bold;
+  fill: var(--mapa-texto);
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 3px;
+}
+
+/* Seta do norte */
+.mapa-norte path {
+  fill: var(--mapa-texto);
+}
+
+.mapa-norte text {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 13px;
+  fill: var(--mapa-texto);
+}
+
+/* ---------- Pontos vermelhos dos povos ---------- */
+.mapa-povos a {
+  cursor: pointer;
+}
+
+.mapa-ponto {
+  fill: var(--mapa-vermelho);
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  transition: transform 0.2s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Ao passar o mouse, o ponto cresce */
+.mapa-povos a:hover .mapa-ponto,
+.mapa-povos a:focus .mapa-ponto {
+  transform: scale(1.4);
+}
+
+/* Anel que "pulsa" em volta do ponto, para chamar a atenção */
+.mapa-pulso {
+  fill: none;
+  stroke: var(--mapa-vermelho);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mapa-pulsar 2.2s ease-out infinite;
+}
+
+@keyframes mapa-pulsar {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* ---------- Legenda ---------- */
+.mapa-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  justify-content: center;
+  list-style: none;
+  margin: 14px 0 4px;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.mapa-legenda li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mapa-legenda span {
+  display: inline-block;
+}
+
+.leg-rio {
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--mapa-rio);
+}
+
+.leg-estado {
+  width: 22px;
+  height: 14px;
+  border-radius: 3px;
+  background: #8fb46f;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #2f5a3a;
+}
+
+.leg-capital {
+  width: 10px;
+  height: 10px;
+  background: #c9a227;
+  transform: rotate(45deg);
+}
+
+.leg-cidade {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--mapa-texto);
+}
+
+.leg-povo {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--mapa-vermelho);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px var(--mapa-vermelho);
+}
+
+/* ---------- Lista de povos embaixo do mapa ---------- */
+.mapa-subtitulo {
+  text-align: center;
+  margin: 32px 0 14px;
+  font-size: 1.4rem;
+}
+
+.mapa-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mapa-lista a {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--mapa-cartao);
+  border: 1px solid var(--mapa-verde-borda);
+  color: var(--mapa-texto);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.mapa-lista a::before {
+  content: "● ";
+  color: var(--mapa-vermelho);
+}
+
+.mapa-lista a:hover,
+.mapa-lista a:focus {
+  background: var(--mapa-texto);
+  color: #ffffff;
+}
+
+.mapa-nota {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  max-width: 700px;
+  margin: 22px auto 0;
+  line-height: 1.5;
+}
+
+/* ---------- Janela com as informações do povo ----------
+   Como funciona sem JavaScript:
+   cada ponto vermelho é um link para "#povo-nome".
+   Quando o endereço da página termina com "#povo-nome",
+   o CSS :target mostra a janela que tem esse id.
+   O botão × e o fundo escuro são links para "#mapa",
+   então a janela some e a página volta para o mapa.
+   ------------------------------------------------------- */
+.mapa-janela {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.mapa-janela:target {
+  display: flex;
+}
+
+/* Fundo escuro: clicar nele também fecha */
+.mapa-fundo {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 30, 20, 0.6);
+}
+
+.mapa-cartao {
+  position: relative;
+  max-width: 460px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--mapa-cartao);
+  border-left: 6px solid var(--mapa-verde-borda);
+  border-radius: 12px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  animation: mapa-aparecer 0.25s ease-out;
+  line-height: 1.6;
+}
+
+@keyframes mapa-aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mapa-cartao h3 {
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  margin: 0 0 4px;
+  color: var(--mapa-texto);
+}
+
+.mapa-etiqueta {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--mapa-vermelho);
+  font-weight: bold;
+}
+
+.mapa-local {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.mapa-cartao ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.mapa-cartao li {
+  margin-bottom: 4px;
+}
+
+.mapa-fechar {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--mapa-texto);
+  text-decoration: none;
+}
+
+/* Foto do povo no topo da janela (ocupa toda a largura do cartão) */
+.mapa-foto {
+  margin: -26px -26px 16px;
+}
+
+.mapa-foto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center 30%;
+  background: var(--verde);
+}
+
+.mapa-foto figcaption {
+  padding: 5px 26px 0;
+  font-size: 0.72rem;
+  opacity: 0.75;
+}
+
+.mapa-foto figcaption a {
+  color: inherit;
+}
+
+.mapa-fechar:hover {
+  color: var(--mapa-vermelho);
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  .mapa-secao h2 {
+    font-size: 1.5rem;
+  }
+
+  .mapa-caixa {
+    padding: 6px;
+  }
+
+  .mapa-legenda {
+    justify-content: flex-start;
+    font-size: 0.8rem;
+  }
+}
+
+/* Quem prefere menos animação não vê o pulso */
+@media (prefers-reduced-motion: reduce) {
+  .mapa-pulso,
+  .mapa-cartao {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   GALERIA DOS DESTINOS (turismo.html), SEM JAVASCRIPT
+   - O cartão é um link para #galeria-x; o :target mostra a janela.
+   - Radios escondidos guardam a foto escolhida; miniaturas e
+     setas são labels ligados a esses radios.
+   - Fechar = link para #destinos.
+   ========================================================= */
+.cartoes-destinos {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Mesma altura em todos os cartões */
+.cartoes-destinos .cartao {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartoes-destinos .cartao > div {
+  flex: 1;
+}
+
+.cartao-foto {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Aviso "Ver 5 fotos" ao passar o mouse */
+.cartao-foto::after {
+  content: "Ver 5 fotos";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--dourado);
+  background: rgba(8, 45, 32, .85);
+  color: var(--creme);
+  font: bold 12px Arial, Helvetica, sans-serif;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .2s, transform .2s;
+}
+
+.cartao:hover .cartao-foto::after,
+.cartao-foto:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+/* Celular/touch (sem mouse): o aviso fica sempre visível */
+@media (hover: none) {
+  .cartao-foto::after {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.cartoes-destinos h3 a {
+  color: var(--verde);
+  cursor: pointer;
+}
+
+.cartoes-destinos h3 a:hover {
+  color: var(--verde2);
+  text-decoration: underline;
+}
+
+/* ---------- Janela da galeria ---------- */
+.galeria-modal {
+  --galeria-altura: min(60vh, 560px);
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.galeria-modal:target {
+  display: flex;
+}
+
+/* Trava a rolagem do fundo */
+body:has(.galeria-modal:target) {
+  overflow: hidden;
+}
+
+/* Fundo escuro: clicar fecha */
+.galeria-fundo {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 18, 12, .93);
+  cursor: default;
+}
+
+.galeria-caixa {
+  position: relative;
+  width: min(980px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 14px 18px 18px;
+  border-top: 4px solid var(--dourado);
+  border-radius: 12px;
+  background: var(--verde);
+  color: var(--creme);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+}
+
+.galeria-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.galeria-topo h3 {
+  margin: 0;
+  font: bold 24px Georgia, serif;
+  color: var(--creme);
+}
+
+.galeria-fechar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--creme);
+  font-size: 34px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.galeria-fechar:hover {
+  background: rgba(255, 255, 255, .1);
+  color: var(--dourado);
+}
+
+/* Radios escondidos */
+.galeria-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Foto grande ---------- */
+.galeria-slide {
+  display: none;
+  position: relative;
+  margin: 0;
+}
+
+.galeria-slide img {
+  display: block;
+  width: 100%;
+  height: var(--galeria-altura);
+  object-fit: contain;
+  border-radius: 8px;
+  background: #03120c;
+}
+
+.galeria-slide figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.galeria-slide figcaption a {
+  color: var(--dourado);
+}
+
+.galeria-contador {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Setas */
+.galeria-seta {
+  position: absolute;
+  top: calc(var(--galeria-altura) / 2);
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--dourado);
+  border-radius: 50%;
+  background: rgba(8, 45, 32, .8);
+  color: var(--creme);
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.galeria-seta:hover {
+  background: var(--dourado);
+  color: var(--verde);
+}
+
+.galeria-anterior {
+  left: 10px;
+}
+
+.galeria-proxima {
+  right: 10px;
+}
+
+/* ---------- Miniaturas ---------- */
+.galeria-miniaturas {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding-bottom: 4px;
+  overflow-x: auto;
+}
+
+.galeria-miniaturas label {
+  flex: 1 0 96px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  opacity: .55;
+  cursor: pointer;
+  transition: opacity .2s, border-color .2s;
+}
+
+.galeria-miniaturas label:hover {
+  opacity: 1;
+}
+
+.galeria-miniaturas img {
+  display: block;
+  width: 100%;
+  height: 64px;
+  object-fit: cover;
+}
+
+/* ---------- Qual foto aparece (vale para todas as galerias) ---------- */
+.galeria-radio:nth-of-type(1):checked ~ .galeria-slides .galeria-slide:nth-child(1),
+.galeria-radio:nth-of-type(2):checked ~ .galeria-slides .galeria-slide:nth-child(2),
+.galeria-radio:nth-of-type(3):checked ~ .galeria-slides .galeria-slide:nth-child(3),
+.galeria-radio:nth-of-type(4):checked ~ .galeria-slides .galeria-slide:nth-child(4),
+.galeria-radio:nth-of-type(5):checked ~ .galeria-slides .galeria-slide:nth-child(5) {
+  display: block;
+}
+
+.galeria-radio:nth-of-type(1):checked ~ .galeria-miniaturas label:nth-child(1),
+.galeria-radio:nth-of-type(2):checked ~ .galeria-miniaturas label:nth-child(2),
+.galeria-radio:nth-of-type(3):checked ~ .galeria-miniaturas label:nth-child(3),
+.galeria-radio:nth-of-type(4):checked ~ .galeria-miniaturas label:nth-child(4),
+.galeria-radio:nth-of-type(5):checked ~ .galeria-miniaturas label:nth-child(5) {
+  opacity: 1;
+  border-color: var(--dourado);
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1000px) {
+  .cartoes-destinos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .cartoes-destinos {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria-modal {
+    --galeria-altura: 45vh;
+    padding: 8px;
+  }
+
+  .galeria-caixa {
+    padding: 10px 12px 14px;
+  }
+
+  .galeria-topo h3 {
+    font-size: 19px;
+  }
+
+  .galeria-seta {
+    width: 38px;
+    height: 38px;
+    font-size: 26px;
+  }
+
+  .galeria-miniaturas label {
+    flex: 0 0 80px;
+  }
+
+  .galeria-miniaturas img {
+    height: 54px;
+  }
+}
+
+/* =========================================================
+   BOTÃO + JANELA "POVOS INDÍGENAS" (curiosidades.html)
+   Sem JavaScript: o botão aponta para #modal-indigenas e o
+   :target mostra a janela. Fechar = link para #povos.
+   ========================================================= */
+.botao-vermelho {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 9px 18px;
+  border-radius: 30px;
+  background: #c62828;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+
+.botao-vermelho:hover,
+.botao-vermelho:focus-visible {
+  background: #a51f1f;
+  transform: translateY(-2px);
+}
+
+.botao-vermelho:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 2px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal:target {
+  display: flex;
+}
+
+/* Trava a rolagem do fundo */
+body:has(.modal:target) {
+  overflow: hidden;
+}
+
+/* Fundo escuro: clicar fecha */
+.modal-fundo {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 18, 12, .85);
+}
+
+.modal-caixa {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  border-top: 5px solid var(--dourado);
+  border-radius: 12px;
+  background: var(--creme);
+  color: var(--texto);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .45);
+  animation: modal-aparecer .25s ease-out;
+}
+
+@keyframes modal-aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.modal-caixa img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--verde);
+}
+
+.modal-conteudo {
+  padding: 20px 24px 22px;
+}
+
+.modal-conteudo h2 {
+  margin: 0 0 10px;
+  font: bold 26px Georgia, serif;
+  color: var(--verde);
+}
+
+.modal-conteudo p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+.modal-credito {
+  margin: 0 !important;
+  padding-top: 10px;
+  border-top: 1px solid #082d2033;
+  font-size: 12px;
+  opacity: .75;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--creme);
+  font-size: 28px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.modal-fechar:hover {
+  background: var(--dourado);
+  color: var(--verde);
+}
+
+@media (max-width: 560px) {
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-conteudo {
+    padding: 16px 18px 18px;
+  }
+
+  .modal-conteudo h2 {
+    font-size: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-caixa {
+    animation: none;
+  }
+}
